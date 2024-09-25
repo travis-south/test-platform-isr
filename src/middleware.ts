@@ -9,7 +9,11 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const originalPath = url.pathname;
 
-  if (originalPath.startsWith('/_next')) {
+  if (
+    originalPath.startsWith('/api') ||
+    originalPath.startsWith('/_next') ||
+    originalPath.startsWith('/favicon.ico')
+  ) {
     return NextResponse.next();
   }
 
