@@ -11,7 +11,8 @@ async function fetchAllSlugs(): Promise<string[]> {
 }
 
 async function fetchContentFromCMS(slug: string, device: 'desktop' | 'mobile'): Promise<string> {
-  return `Content for ${device} with slug: ${slug}`;
+  const randomNum = Math.floor(Math.random() * 100);
+  return `Content for ${device} with slug: ${slug} and random number: ${randomNum}`;
 }
 
 const DesktopPage: NextPage<PageProps> = ({ content }) => {
